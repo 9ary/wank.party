@@ -42,3 +42,6 @@ donation-page=no
 
 # Set to 'yes' to add a link to /resources on the home page (for members)
 resources-page=no
+
+# Set a Telegram API key to send an optional notification to the user
+telegram-key=

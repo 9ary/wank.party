@@ -18,6 +18,7 @@ import locale
 import shlex
 import math
 import base64
+import requests
 
 encoding = locale.getdefaultlocale()[1]
 api = Blueprint('api', __name__, template_folder='../../templates')
@@ -102,6 +103,16 @@ def upload():
 
     db.add(upload)
     db.commit()
+
+    tg_uid = request.form.get('tg_uid')
+    if tg_uid:
+        try:
+            requests.post("https://api.telegram.org/bot" + _cfg("telegram-key") + "/sendMessage",
+                    data={"text":_cfg("protocol") + "://" + _cfg("domain") + "/" + upload.path,
+                        "chat_id":tg_uid})
+        except:
+            pass
+
     return {
         "success": True,
         "hash": upload.hash,
