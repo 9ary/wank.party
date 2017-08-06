@@ -94,3 +94,9 @@ nav {
         position: static;
     }
 }
+
+@media (min-width: 768px) {
+  .modal-dialog {
+      width: 700px;
+  }
+}

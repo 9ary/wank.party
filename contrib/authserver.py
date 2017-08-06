@@ -15,7 +15,7 @@ class UserValidator(object):
         if not user.approved:
             print("Authentication failed for {}, account unapproved".format(user))
             return False
-        success = bcrypt.hashpw(password, user.password) == user.password
+        success = bcrypt.hashpw(password.encode(), user.password.encode()) == user.password.encode()
         if not success:
             print("Authentication failed for {}, bad password".format(user))
         else:
