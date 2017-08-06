@@ -104,12 +104,13 @@ def upload():
     db.add(upload)
     db.commit()
 
+    url = _cfg("protocol") + "://" + _cfg("domain") + "/" + upload.path
+
     tg_uid = request.form.get('tg_uid')
     if tg_uid:
         try:
             requests.post("https://api.telegram.org/bot" + _cfg("telegram-key") + "/sendMessage",
-                    data={"text":_cfg("protocol") + "://" + _cfg("domain") + "/" + upload.path,
-                        "chat_id":tg_uid})
+                    data={"text": url, "chat_id": tg_uid})
         except:
             pass
 
@@ -117,7 +118,7 @@ def upload():
         "success": True,
         "hash": upload.hash,
         "shorthash": upload.shorthash,
-        "url": _cfg("protocol") + "://" + _cfg("domain") + "/" + upload.path
+        "url": url
     }
 
 @api.route("/api/disown", methods=["POST"])
