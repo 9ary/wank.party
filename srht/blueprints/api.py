@@ -19,6 +19,8 @@ import shlex
 import math
 import base64
 import requests
+import qrcode
+from io import BytesIO
 
 encoding = locale.getdefaultlocale()[1]
 api = Blueprint('api', __name__, template_folder='../../templates')
@@ -161,6 +163,22 @@ def tox():
     return {
         "success": True
     }
+
+@api.route("/api/qr/<filename>")
+def qr(filename=None):
+    if not filename:
+        abort(400)
+    if not Upload.query.filter_by(path=filename).first():
+        abort(404)
+
+    url = _cfg("protocol") + "://" + _cfg("domain") + "/" + filename
+    qr = qrcode.make(url)
+
+    byte_io = BytesIO()
+    img = qr.save(byte_io, "PNG")
+    byte_io.seek(0)
+
+    return send_file(byte_io, mimetype="image/png")
 
 def extension(f):
     parts = f.rsplit('.', 2)
