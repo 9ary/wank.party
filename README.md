@@ -79,6 +79,9 @@ To run it in production, you probably want to use uWSGI.
 When running in a production enviornment, run `python app.py` at least once and
 then read the SQL stuff below before you let it go for good.
 
+`wsgi-disable-file-wrapper = true` is required in your INI file to properly use
+the QR code API.
+
 nginx configuration is available in `nginx/`, modify it to suit your environment.
 **nginx is required to run wank.party properly**.
 
