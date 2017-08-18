@@ -101,7 +101,7 @@ def upload():
         return {
             "success": False,
             "error": "Upload interrupted"
-        }
+        }, 409
 
     db.add(upload)
     db.commit()
