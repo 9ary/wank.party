@@ -71,7 +71,7 @@ if not app.debug:
 def handle_404(e):
     return render_template("not_found.html"), 404
 
-moe = os.listdir('../walriidex/img/')
+moe = os.listdir('_static/moe/')
 
 @app.context_processor
 def inject():
