@@ -16,6 +16,7 @@ _STATIC:=$(patsubst _static/%,static/%,$(wildcard _static/*))
 
 static/%: _static/%
 	@mkdir -p static/
+	rm -rf $@
 	cp -R $< $@
 
 static/%.css: styles/%.css
