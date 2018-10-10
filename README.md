@@ -34,6 +34,14 @@ You'll need these things (Arch packages in parenthesis, some from AUR):
 * bcrypt (python-bcrypt)
 * redis (python-redis)
 * pystache (python-pystache)
+* qrcode (python-qrcode)
+
+pythonPackages for Nix:
+
+    bcrypt cffi flask flask_login itsdangerous
+    jinja2 markupsafe psycopg2 pycparser pystache
+    requests six sqlalchemy werkzeug wheel redis
+    qrcode
 
 Use the packages your OS provides, or build them from source.
 
