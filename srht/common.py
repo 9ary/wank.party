@@ -100,5 +100,5 @@ def cors(f):
 def file_link(path):
     return _cfg("protocol") + "://" + _cfg("domain") + "/" + path
 
-def disown_link(path):
-    return _cfg("protocol") + "://"  + _cfg("domain") + "/disown?filename=" + path
+def hide_link(path):
+    return _cfg("protocol") + "://"  + _cfg("domain") + "/hide?filename=" + path

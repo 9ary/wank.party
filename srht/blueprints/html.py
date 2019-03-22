@@ -198,9 +198,9 @@ def reset_password(username, confirmation):
 @loginrequired
 def uploads():
     return render_template("uploads.html", uploads=Upload.query.filter(Upload.user_id == current_user.id, Upload.hidden==False).order_by(Upload.created.desc()))
-@html.route("/disown", methods=['GET'])
+@html.route("/hide", methods=['GET'])
 @loginrequired
-def disown():
+def hide():
     if request.method == 'GET':
         filename = request.args.get('filename')
         Upload.query.filter_by(path=filename).first().hidden = True

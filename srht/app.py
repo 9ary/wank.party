@@ -85,7 +85,7 @@ def inject():
         'locale': locale,
         'url_for': url_for,
         'file_link': file_link,
-        'disown_link': disown_link,
+        'hide_link': hide_link,
         'user': current_user,
         'moe': random.choice(moe),
         'random': random,

@@ -123,9 +123,9 @@ def upload():
         "url": url
     }
 
-@api.route("/api/disown", methods=["POST"])
+@api.route("/api/hide", methods=["POST"])
 @json_output
-def disown():
+def hide():
     key = request.form.get('key')
     filename = request.form.get('filename')
     if not key:
