@@ -94,6 +94,8 @@ def login():
             return render_template("login.html", **{ "username": username, "errors": 'Your username or password is incorrect.' })
         if not bcrypt.hashpw(password.encode('UTF-8'), user.password.encode('UTF-8')) == user.password.encode('UTF-8'):
             return render_template("login.html", **{ "username": username, "errors": 'Your username or password is incorrect.' })
+        if user.rejected:
+            return redirect("/rejected")
         if not user.approved:
             return redirect("/pending")
         login_user(user, remember=remember)
@@ -106,6 +108,10 @@ def login():
 def logout():
     logout_user()
     return redirect("/")
+
+@html.route("/rejected")
+def rejected():
+    return render_template("rejected.html")
 
 @html.route("/pending")
 def pending():
