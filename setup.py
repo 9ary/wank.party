@@ -4,9 +4,9 @@ setup(
   packages = ['srht'],
   version = '1.0.0',
   description = 'wank.party services',
-  author = 'Dan Elkouby',
+  author = 'novenary',
   author_email = 'streetwalkermc@gmail.com',
-  url = 'https://github.com/Streetwalrus/wank.party',
+  url = 'https://github.com/9ary/wank.party',
   download_url = '',
   keywords = [],
   classifiers = []

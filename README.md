@@ -59,7 +59,7 @@ give it.
 
 Find a place you want the code to live.
 
-    $ git clone git://github.com/Streetwalrus/wank.party.git
+    $ git clone git://github.com/9ary/wank.party.git
     $ cd wank.party
 
 **Configure the site**
