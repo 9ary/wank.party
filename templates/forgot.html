@@ -6,8 +6,8 @@
 </div>
 <hr />
 {% if success %}
-    <p>We've sent you an email with further instructions. It should arrive soon. <a href="mailto:{{ owner_email }}">Email us</a>
-if you run into trouble.</p>
+    <p><s>We've sent you an email with further instructions. It should arrive soon.</s><br />
+Emails are currently broken, please <a href="mailto:{{ owner_email }}">contact {{ owner }} directly</a>.</p>
 {% else %}
 <div class="row">
     <form class="form-horizontal col-md-6" role="form" action="/forgot-password" method="POST">
