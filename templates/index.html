@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block body %} 
 {% include "index-about.html" %}
+{% if False %}
 <hr />
 <h4 class="text-center">Request Account</h4>
 {% if registered %}
@@ -39,5 +40,6 @@ decision is made.</p>
         </div>
     </div>
 </form>
+{% endif %}
 {% endif %}
 {% endblock %}
