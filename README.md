@@ -4,9 +4,10 @@ Private file hosting for you and your friends.
 
 ![](https://wank.party/coIG.png)
 
-I run a private instance of wank.party *at* [wank.party](https://wank.party). Don't bother
-requesting an invite unless you know me personally, you'll be rejected without hesitation.
-In this case, here are the setup instructions to run it on your own infrastructure:
+I run a private instance of wank.party *at* [wank.party](https://wank.party). Registrations
+are closed.
+
+Here are the setup instructions to run it on your own infrastructure:
 
 ## Running the site
 
