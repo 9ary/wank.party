@@ -6,6 +6,7 @@ window.addEventListener('dragenter', dragNOP, false);
 window.addEventListener('dragleave', dragNOP, false);
 window.addEventListener('dragover', dragNOP, false);
 window.addEventListener('drop', handleDragDrop, false);
+window.addEventListener('paste', handlePaste, false);
 
 document.querySelector(".target").addEventListener("click", function(e) {
     e.preventDefault();
@@ -71,6 +72,14 @@ function handleDragDrop(e) {
     dragNOP(e);
     for (var i = 0; i < e.dataTransfer.files.length; i++) {
         var file = e.dataTransfer.files[i];
+        var progress = addRow(file);
+        uploadFile(file, progress);
+    }
+}
+
+function handlePaste(e) {
+    for (var i = 0; i < e.clipboardData.files.length; i++) {
+        var file = e.clipboardData.files[i];
         var progress = addRow(file);
         uploadFile(file, progress);
     }
